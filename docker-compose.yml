@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17 # ¿Qué versión? Busca cuál es la última estable
+    container_name: postgres-videojuegos # Ponle un nombre descriptivo
+    environment:
+      POSTGRES_USER: ${DB_USER} # Elige un usuario
+      POSTGRES_PASSWORD: ${DB_PASSWORD} # Elige una contraseña
+      POSTGRES_DB: ${DB_NAME} #Cómo llamarías a tu base de datos?
+    ports:
+      - "5433:5432" # ¿Qué puerto de TU máquina mapeamos al 5432 del contenedor?
+    volumes:
+      - pgdata:/var/lib/postgresql/data # Aquí se guardan los datos
+
+volumes:
+  pgdata: # Esto declara el volumen
