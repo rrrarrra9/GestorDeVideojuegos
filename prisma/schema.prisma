@@ -1,0 +1,34 @@
+
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Format {
+  DIGITAL 
+  PHYSICAL 
+  BOTH 
+  WISHLIST
+}
+
+model Game {
+  id    Int   @id @default(autoincrement())
+  rawgId    Int   @unique
+  name    String 
+  released    DateTime
+  rating    Float?
+  backgroundImage  String
+  description   String
+  platforms   String[]
+  genres    String[]
+  played    Boolean @default(false)
+  format    Format
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+}

@@ -1,0 +1,13 @@
+id number obligatorio autoincremental 
+rawgId number obligatorio
+name String obligatorio
+released: DateTime obligatorio
+rating float 
+background_image stringurl obligatorio
+description string obligatorio
+platforms array obligarorio
+genres array obligatorio
+played boolean obligatorio
+format enum(DIGITAL PHYSICAL, BOTH, WISHLIST) obligarorio
+createdAt datetime obligatorio
+updatedAt datetime obligatorio
