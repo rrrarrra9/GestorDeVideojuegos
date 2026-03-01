@@ -14,7 +14,6 @@ export async function getAllGamesController(req: Request, res: Response) {
 
 }
 
-
 export async function getGameByIdController(req: Request, res: Response) {
     const id = Number(req.params.id)
     try {
